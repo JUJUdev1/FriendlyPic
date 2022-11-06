@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        'pink-1': '#c0738e',
+      },
       margin: {
         320: '320px',
       },

@@ -35,7 +35,7 @@ export const categories = [
     image: 'https://i.pinimg.com/236x/fa/95/98/fa95986f2c408098531ca7cc78aee3a4.jpg',
   },
   {
-    name: 'quotes',
+    name: 'familly',
     image: 'https://i.pinimg.com/236x/46/7c/17/467c17277badb00b638f8ec4da89a358.jpg',
   }, {
     name: 'cats',

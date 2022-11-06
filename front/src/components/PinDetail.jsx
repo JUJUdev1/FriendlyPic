@@ -80,8 +80,12 @@ const PinDetail = ({ user }) => {
                   <MdDownloadForOffline />
                 </a>
               </div>
-              <a href={pinDetail.destination} target="_blank" rel="noreferrer">
-                {pinDetail.destination?.slice(8)}
+              <a href={pinDetail.destination} target="_blank" rel="noreferrer" className='text-ellipsis'>
+                
+                  {pinDetail.destination ? 
+                  <p className="text-sm text-gray-500">Link to the destination</p>
+                  : <p className="text-sm text-gray-500"></p>}
+                
               </a>
             </div>
             <div>
