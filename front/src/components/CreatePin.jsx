@@ -11,7 +11,6 @@ const CreatePin = ({ user }) => {
   const [title, setTitle] = useState('');
   const [about, setAbout] = useState('');
   const [loading, setLoading] = useState(false);
-  const [destination, setDestination] = useState();
   const [fields, setFields] = useState();
   const [category, setCategory] = useState();
   const [imageAsset, setImageAsset] = useState();
@@ -46,7 +45,6 @@ const CreatePin = ({ user }) => {
         _type: 'pin',
         title,
         about,
-        destination,
         image: {
           _type: 'image',
           asset: {
@@ -78,7 +76,8 @@ const CreatePin = ({ user }) => {
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
       {fields && (
-        <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in ">Please add all fields.</p>
+        <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in ">Veuillez remplir tous les champs
+        </p>
       )}
       <div className=" flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5  w-full">
         <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
@@ -88,7 +87,9 @@ const CreatePin = ({ user }) => {
             )}
             {
               wrongImageType && (
-                <p>It&apos;s wrong file type.</p>
+                <p>
+                  Mauvais type d'image
+                </p>
               )
             }
             {!imageAsset ? (
@@ -99,11 +100,13 @@ const CreatePin = ({ user }) => {
                     <p className="font-bold text-2xl">
                       <AiOutlineCloudUpload />
                     </p>
-                    <p className="text-lg">Click to upload</p>
+                    <p className="text-lg">
+                    Click pour ajouter une image
+                    </p>
                   </div>
 
                   <p className="mt-32 text-gray-400">
-                    Recommendation: Use high-quality JPG, JPEG, SVG, PNG, GIF or TIFF less than 20MB
+                    Recommendation: Utiliser des images de haute qualité JPG, JPEG, SVG, PNG, GIF ou TIFF en dessous de 20 Mo.
                   </p>
                 </div>
                 <input
@@ -137,7 +140,7 @@ const CreatePin = ({ user }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Add your title"
+            placeholder="Renseignez le titre de votre pin"
             className="outline-none text-2xl sm:text-3xl font-bold border-b-2 border-gray-200 p-2"
           />
           {user && (
@@ -154,27 +157,24 @@ const CreatePin = ({ user }) => {
             type="text"
             value={about}
             onChange={(e) => setAbout(e.target.value)}
-            placeholder="Tell everyone what your Pin is about"
-            className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
-          />
-          <input
-            type="url"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-            placeholder="Add a destination link"
+            placeholder="Dites-nous en plus sur votre pin"
             className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
           />
 
           <div className="flex flex-col">
             <div>
-              <p className="mb-2 font-semibold text:lg sm:text-xl">Choose Pin Category</p>
+              <p className="mb-2 font-semibold text:lg sm:text-xl">
+              Choisissez une catégorie
+              </p>
               <select
                 onChange={(e) => {
                   setCategory(e.target.value);
                 }}
                 className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
               >
-                <option value="others" className="sm:text-bg bg-white">Select Category</option>
+                <option value="others" className="sm:text-bg bg-white">
+                Selectionner une catégorie
+                </option>
                 {categories.map((item) => (
                   <option className="text-base border-0 outline-none capitalize bg-white text-black " value={item.name}>
                     {item.name}
@@ -188,7 +188,7 @@ const CreatePin = ({ user }) => {
                 onClick={savePin}
                 className="bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none"
               >
-                Save Pin
+                Poster
               </button>
             </div>
           </div>

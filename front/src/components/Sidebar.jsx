@@ -1,6 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
-import { IoIosArrowForward } from "react-icons/io";
 import { categories } from "../utils/data";
 import logo from "../assets/logo.png";
 
@@ -35,10 +34,10 @@ const Sidebar = ({ user, closeToggle }) => {
             onClick={handleCloseSidebar}
           >
             <RiHomeFill />
-            Home
+            Accueil
           </NavLink>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl">
-            Discover categories
+            Découvrir par catégorie
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
             <NavLink
@@ -76,7 +75,9 @@ const Sidebar = ({ user, closeToggle }) => {
             onClick={handleCloseSidebar}
             >
               <img src="https://i.ibb.co/7bQQYkX/user.png" alt="no-user-profile" className="w-10 h-10 rounded " />
-                <p>Login</p>
+                <p>
+                  Connectez-vous
+                </p>
             </Link>
         )}
     </div>

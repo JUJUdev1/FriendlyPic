@@ -19,7 +19,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
 
-  const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
+  // const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
 
   useEffect(() => {
     const query = userQuery(userId);
@@ -94,7 +94,7 @@ const UserProfile = () => {
             }}
             className={`${activeBtn === 'created' ? activeBtnStyles : notActiveBtnStyles}`}
           >
-            Created
+          Pins
           </button>
           <button
             type="button"
@@ -104,7 +104,7 @@ const UserProfile = () => {
             }}
             className={`${activeBtn === 'saved' ? activeBtnStyles : notActiveBtnStyles}`}
           >
-            Saved
+            Favoris
           </button>
         </div>
 
@@ -114,7 +114,7 @@ const UserProfile = () => {
 
         {pins?.length === 0 && (
         <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
-          No Pins Found!
+          Aucun pin trouvé
         </div>
         )}
       </div>

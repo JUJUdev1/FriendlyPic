@@ -33,6 +33,7 @@ const PinDetail = ({ user }) => {
 
   useEffect(() => {
     fetchPinDetails();
+    // eslint-disable-next-line
   }, [pinId]);
 
   const addComment = () => {
@@ -80,13 +81,6 @@ const PinDetail = ({ user }) => {
                   <MdDownloadForOffline />
                 </a>
               </div>
-              <a href={pinDetail.destination} target="_blank" rel="noreferrer" className='text-ellipsis'>
-                
-                  {pinDetail.destination ? 
-                  <p className="text-sm text-gray-500">Link to the destination</p>
-                  : <p className="text-sm text-gray-500"></p>}
-                
-              </a>
             </div>
             <div>
               <h1 className="text-4xl font-bold break-words mt-3">
@@ -98,7 +92,9 @@ const PinDetail = ({ user }) => {
               <img src={pinDetail?.postedBy.image} className="w-10 h-10 rounded-full" alt="user-profile" />
               <p className="font-bold">{pinDetail?.postedBy.userName}</p>
             </Link>
-            <h2 className="mt-5 text-2xl">Comments</h2>
+            <h2 className="mt-5 text-2xl">
+              Commentaires
+            </h2>
             <div className="max-h-370 overflow-y-auto">
               {pinDetail?.comments?.map((item) => (
                 <div className="flex gap-2 mt-5 items-center bg-white rounded-lg" key={item.comment}>
@@ -121,7 +117,7 @@ const PinDetail = ({ user }) => {
               <input
                 className=" flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300"
                 type="text"
-                placeholder="Add a comment"
+                placeholder="Ajouter un commentaire"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
@@ -130,7 +126,7 @@ const PinDetail = ({ user }) => {
                 className="bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
                 onClick={addComment}
               >
-                {addingComment ? 'Doing...' : 'Done'}
+                {addingComment ? 'En Cours...' : 'Ajouter'}
               </button>
             </div>
           </div>
@@ -138,7 +134,7 @@ const PinDetail = ({ user }) => {
       )}
       {pins?.length > 0 && (
         <h2 className="text-center font-bold text-2xl mt-8 mb-4">
-          More like this
+         D'autres pins similaires
         </h2>
       )}
       {pins ? (

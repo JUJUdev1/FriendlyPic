@@ -1,52 +1,38 @@
 export const categories = [
   {
-    name: 'cars',
-    image: 'https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg',
+    name: 'Les préparatifs',
+    image: 'https://provence-emoi.com/wp-content/uploads/2020/09/organisation-mariage-rentr%C3%A9e-septembre-pr%C3%A9paratifs-wedding-planner-provence-4.jpg',
   },
   {
-    name: 'fitness',
-    image: 'https://i.pinimg.com/236x/25/14/29/251429345940a47490cc3d47dfe0a8eb.jpg',
+    name: 'Les mariés',
+    image: 'https://www.poitiers.catholique.fr/wp-content/uploads/2019/12/midsection-of-woman-making-heart-shape-with-hands-256737-scaled.jpg',
   },
   {
-    name: 'wallpaper',
-    image: 'https://i.pinimg.com/236x/03/48/b6/0348b65919fcbe1e4f559dc4feb0ee13.jpg',
+    name: 'Les invités',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvjvb1INKuZo96BY18Fev9vBhHV2xVo-5TUyPZOOfZR0ZuN84ZkgHC87xh8Riu99Pmqus&usqp=CAU',
   },
   {
-    name: 'websites',
-    image: 'https://i.pinimg.com/750x/66/b1/29/66b1296d36598122e6a4c5452b5a7149.jpg',
+    name: 'La mairie',
+    image: 'https://www.italianipocket.com/wp-content/uploads/2017/02/mairie.png',
   },
   {
-    name: 'photo',
-    image: 'https://i.pinimg.com/236x/72/8c/b4/728cb43f48ca762a75da645c121e5c57.jpg',
+    name: 'La cérémonie',
+    image: 'https://www.mariage.be/images/conseils-mariage/photo-mariage/deroulement-ceremonie-laique.jpg',
   },
   {
-    name: 'food',
-    image: 'https://i.pinimg.com/236x/7d/ef/15/7def15ac734837346dac01fad598fc87.jpg',
+    name: 'Le vin d’honneur',
+    image: 'https://www.zankyou.fr/images/mag-card-c/d8a/156e/878/623/-/fr/wp-content/uploads/2018/08/befunky-collage-2019-10-28t225300960.jpg',
   },
   {
-    name: 'nature',
-    image: 'https://i.pinimg.com/236x/b9/82/d4/b982d49a1edd984c4faef745fd1f8479.jpg',
+    name: 'La réception',
+    image: 'https://wp.fr.aleteia.org/wp-content/uploads/sites/6/2018/01/web3-wedding-the-elegant-dinner-table-on-the-beach-shutterstock_623074871.jpg?w=620&h=348&crop=1',
   },
   {
-    name: 'art',
-    image: 'https://i.pinimg.com/736x/f4/e5/ba/f4e5ba22311039662dd253be33bf5f0e.jpg',
+    name: 'La soirée',
+    image: 'https://animafunparty.com/wp-content/uploads/2016/02/mariage-7.jpg',
   }, {
-    name: 'travel',
+    name: 'Divers',
     image: 'https://i.pinimg.com/236x/fa/95/98/fa95986f2c408098531ca7cc78aee3a4.jpg',
-  },
-  {
-    name: 'familly',
-    image: 'https://i.pinimg.com/236x/46/7c/17/467c17277badb00b638f8ec4da89a358.jpg',
-  }, {
-    name: 'cats',
-    image: 'https://i.pinimg.com/236x/6c/3c/52/6c3c529e8dadc7cffc4fddedd4caabe1.jpg',
-  }, {
-    name: 'dogs',
-    image: 'https://i.pinimg.com/236x/1b/c8/30/1bc83077e363db1a394bf6a64b071e9f.jpg',
-  },
-  {
-    name: 'others',
-    image: 'https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg',
   },
 ];
 
@@ -57,7 +43,6 @@ export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
     }
   },
       _id,
-      destination,
       postedBy->{
         _id,
         userName,
@@ -84,7 +69,6 @@ export const pinDetailQuery = (pinId) => {
     title, 
     about,
     category,
-    destination,
     postedBy->{
       _id,
       userName,
@@ -118,7 +102,6 @@ export const pinDetailMorePinQuery = (pin) => {
       }
     },
     _id,
-    destination,
     postedBy->{
       _id,
       userName,
@@ -144,7 +127,6 @@ export const searchQuery = (searchTerm) => {
           }
         },
             _id,
-            destination,
             postedBy->{
               _id,
               userName,
@@ -175,7 +157,6 @@ export const userCreatedPinsQuery = (userId) => {
       }
     },
     _id,
-    destination,
     postedBy->{
       _id,
       userName,
@@ -200,7 +181,6 @@ export const userSavedPinsQuery = (userId) => {
       }
     },
     _id,
-    destination,
     postedBy->{
       _id,
       userName,

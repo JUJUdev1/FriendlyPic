@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 import { client, urlFor } from "../client";
 import { fetchUser } from "../utils/fetchUser";
@@ -14,7 +13,7 @@ const Pin = ({ pin }) => {
 
   const navigate = useNavigate();
 
-  const { postedBy, image, _id, destination } = pin;
+  const { postedBy, image, _id } = pin;
 
   const user = fetchUser();
 
@@ -93,7 +92,7 @@ const Pin = ({ pin }) => {
                   type="button"
                   className="bg-pink-1 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
                 >
-                  {pin?.save?.length} Saved
+                  {pin?.save?.length} Sauvegardé
                 </button>
               ) : (
                 <button
@@ -104,23 +103,11 @@ const Pin = ({ pin }) => {
                   type="button"
                   className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
                 >
-                  {pin?.save?.length} {savingPost ? "Saving" : "Save"}
+                  {pin?.save?.length} {savingPost ? "Bravo" : "Enregistrer"}
                 </button>
               )}
             </div>
             <div className=" flex justify-between items-center gap-2 w-full">
-              {destination?.slice(8).length > 0 ? (
-                <a
-                  href={destination}
-                  target="_blank"
-                  className="bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <BsFillArrowUpRightCircleFill />
-                  {destination?.slice(8, 17)}...
-                </a>
-              ) : undefined}
               {postedBy?._id  === user?.sub && (
                 <button
                   type="button"

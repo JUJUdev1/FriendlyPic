@@ -2,7 +2,7 @@ import React from 'react';
 import {GoogleLogin} from '@react-oauth/google';
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { FcGoogle } from 'react-icons/fc';
-import shareVideo from '../assets/share.mp4';
+import loginBG from '../assets/loginBG.jpeg';
 import logo from '../assets/logowhite.png';
 import { useNavigate } from 'react-router-dom';
 import { client } from '../client';
@@ -37,13 +37,9 @@ const Login = () => {
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className=" relative w-full h-full">
-        <video
-          src={shareVideo}
-          type="video/mp4"
-          loop
-          controls={false}
-          muted
-          autoPlay
+        <img
+          src={loginBG}
+          alt="loginBG"
           className="w-full h-full object-cover"
         />
 
